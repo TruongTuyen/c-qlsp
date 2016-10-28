@@ -1,0 +1,49 @@
+﻿@model TT_QLSP2.Models.EF.NhomSanPham
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/__MainLayout.cshtml";
+}
+
+
+<div>
+    <h4>Nhóm sản phẩm</h4>
+    <hr />
+    
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            Chi tiết
+        </div>
+        <!-- /.panel-heading -->
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Tên Nhóm</th>
+                            <th>Mô tả</th>
+                            <th>Ảnh</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>@Html.DisplayFor(model => model.TenNhom)</td>
+                            <td>@Html.DisplayFor(model => model.MoTa)</td>
+                            <td>
+                                
+                                <div style="width:150px; height:150px; background: url(/@Html.DisplayFor(model => model.Anh)) center center no-repeat; background-size: cover;"></div>
+                            </td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+            <!-- /.table-responsive -->
+        </div>
+        <!-- /.panel-body -->
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
